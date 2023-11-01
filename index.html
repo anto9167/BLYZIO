@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>u nlocked Gxme Websites</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #3a3a3a; /* Background color */
+        }
+
+        #initial-image {
+            width: 100%;
+            height: 100vh;
+            background: #3a3a3a; /* Light grey background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: imageZoom 3s infinite alternate; /* Image animation */
+        }
+
+        #initial-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        @keyframes imageZoom {
+            0% {
+                transform: scale(1); /* Initial size */
+            }
+            50% {
+                transform: scale(1.2); /* Slightly larger size */
+            }
+            100% {
+                transform: scale(1); /* Back to initial size */
+            }
+        }
+
+        #image-gallery {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #000; /* Black background */
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            gap: 1cm; /* 1 cm clear border */
+        }
+
+        .gallery-item {
+            width: 100%; /* Full width for each item */
+            background: #000; /* Black background around each image */
+            padding: 1cm; /* 1 cm padding to create a clear border */
+            text-align: center; /* Center the image */
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="header-image.jpg" alt="Company Logo">
-    </header>
-    <div class="content">
-        <h1>Welcome to u nlocked Gxme Websites</h1>
-        <p>Your source for fun and u nlocked gxmes.</p>
-        <!-- Add more content and images here -->
+    <div id="initial-image">
+        <img src="BLY ZIO (2).png" alt="Your Image">
     </div>
+
+    <div id="image-gallery">
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <a href="https://sites.google.com/view/polargxming"><img src="gxbane.png" alt="PolarGXming"></a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://terminal.blyzio.click"><img src="terminal-removebg-preview.png" alt="Terminal"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show the image gallery after 3 seconds
+        setTimeout(function() {
+            document.getElementById('initial-image').style.display = 'none';
+            document.getElementById('image-gallery').style.display = 'flex';
+        }, 3000);
+    </script>
 </body>
 </html>
